@@ -1,7 +1,6 @@
 ﻿Imports Newtonsoft.Json
 
 Public Class FormLogin
-
     Private Sub FormLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarCarreras()
 
@@ -61,7 +60,7 @@ Public Class FormLogin
         Program.UsuarioActual = usuario
 
         ' Abrir Dashboard
-        Dim dashboard As New FormDashboard()
+        Dim dashboard As New FormDashboard
         dashboard.Show()
         Me.Hide()
     End Sub

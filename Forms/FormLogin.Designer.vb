@@ -29,7 +29,8 @@ Partial Class FormLogin
         txtContraseña = New TextBox()
         lblCarrera = New Label()
         cmbCarrera = New ComboBox()
-        btnLoguin = New Button()
+        btnLogin = New Button()
+        btnSalir = New Label()
         SuspendLayout()
         ' 
         ' lblTitulo
@@ -94,24 +95,36 @@ Partial Class FormLogin
         cmbCarrera.Size = New Size(250, 38)
         cmbCarrera.TabIndex = 6
         ' 
-        ' btnLoguin
+        ' btnLogin
         ' 
-        btnLoguin.BackColor = Color.DarkGoldenrod
-        btnLoguin.FlatStyle = FlatStyle.Flat
-        btnLoguin.ForeColor = SystemColors.ControlText
-        btnLoguin.Location = New Point(140, 280)
-        btnLoguin.Name = "btnLoguin"
-        btnLoguin.Size = New Size(120, 40)
-        btnLoguin.TabIndex = 7
-        btnLoguin.Text = "Ingresar"
-        btnLoguin.UseVisualStyleBackColor = False
+        btnLogin.BackColor = Color.DarkGoldenrod
+        btnLogin.FlatStyle = FlatStyle.Flat
+        btnLogin.ForeColor = SystemColors.ControlText
+        btnLogin.Location = New Point(140, 280)
+        btnLogin.Name = "btnLogin"
+        btnLogin.Size = New Size(120, 40)
+        btnLogin.TabIndex = 7
+        btnLogin.Text = "Ingresar"
+        btnLogin.UseVisualStyleBackColor = False
+        ' 
+        ' btnSalir
+        ' 
+        btnSalir.AutoSize = True
+        btnSalir.BackColor = Color.OrangeRed
+        btnSalir.Font = New Font("Segoe UI Black", 15.75F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        btnSalir.Location = New Point(286, 285)
+        btnSalir.Name = "btnSalir"
+        btnSalir.Size = New Size(120, 40)
+        btnSalir.TabIndex = 8
+        btnSalir.Text = "Salir"
         ' 
         ' FormLogin
         ' 
         AutoScaleDimensions = New SizeF(13F, 30F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(434, 361)
-        Controls.Add(btnLoguin)
+        Controls.Add(btnSalir)
+        Controls.Add(btnLogin)
         Controls.Add(cmbCarrera)
         Controls.Add(lblCarrera)
         Controls.Add(txtContraseña)
@@ -121,7 +134,7 @@ Partial Class FormLogin
         Controls.Add(lblTitulo)
         Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         FormBorderStyle = FormBorderStyle.FixedDialog
-        Margin = New Padding(6, 6, 6, 6)
+        Margin = New Padding(6)
         MaximizeBox = False
         Name = "FormLogin"
         StartPosition = FormStartPosition.CenterScreen
@@ -137,5 +150,6 @@ Partial Class FormLogin
     Friend WithEvents txtContraseña As TextBox
     Friend WithEvents lblCarrera As Label
     Friend WithEvents cmbCarrera As ComboBox
-    Friend WithEvents btnLoguin As Button
+    Friend WithEvents btnLogin As Button
+    Friend WithEvents btnSalir As Label
 End Class
