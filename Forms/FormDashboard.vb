@@ -14,7 +14,7 @@
 
     Private Sub FormDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarMaterias()
-        CargarHorarioResumen()
+        CargarHorarioResumen()   ' <--- TIENE QUE ESTAR
         ActualizarEstadisticas()
     End Sub
 
@@ -26,11 +26,26 @@
     End Sub
 
     Private Sub CargarHorarioResumen()
+        ' Limpiar filas existentes
         dgvHorarioResumen.Rows.Clear()
+
+        ' Asegurar que tiene las columnas correctas
+        dgvHorarioResumen.ColumnCount = 7
+        dgvHorarioResumen.Columns(0).HeaderText = "Hora"
+        dgvHorarioResumen.Columns(1).HeaderText = "Lun"
+        dgvHorarioResumen.Columns(2).HeaderText = "Mar"
+        dgvHorarioResumen.Columns(3).HeaderText = "Mié"
+        dgvHorarioResumen.Columns(4).HeaderText = "Jue"
+        dgvHorarioResumen.Columns(5).HeaderText = "Vie"
+        dgvHorarioResumen.Columns(6).HeaderText = "Sáb"
+
+        ' Definir las franjas horarias
         Dim horarios As String() = {
-            "8:00", "8:40", "9:20", "10:10", "10:50", "11:30", "12:10",
-            "12:50", "13:30", "14:10", "14:50", "15:30", "16:10", "16:50", "17:30"
-        }
+        "8:00", "8:40", "9:20", "10:10", "10:50", "11:30", "12:10",
+        "12:50", "13:30", "14:10", "14:50", "15:30", "16:10", "16:50", "17:30"
+    }
+
+        ' Agregar cada fila
         For Each h In horarios
             dgvHorarioResumen.Rows.Add(h, "", "", "", "", "", "")
         Next
@@ -98,4 +113,30 @@
             txtBuscar.ForeColor = SystemColors.GrayText
         End If
     End Sub
+
+
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        ' Cerrar todas las ventanas abiertas
+        For Each f As Form In Application.OpenForms
+            f.Close()
+        Next
+
+        ' Salir de la aplicación
+        Application.Exit()
+        Environment.Exit(0)  ' Forzar el cierre del proceso
+    End Sub
+
+
+    Private Sub FormDashboard_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        ' Asegurar que todos los recursos se liberen
+        ' Application.Exit()
+        Environment.Exit(0)
+    End Sub
+
+    ' Libera recursos y cierra la aplicación cuando se cierra el formulario
+    Private Sub FormDashboard_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Environment.Exit(0)
+    End Sub
+
+
 End Class

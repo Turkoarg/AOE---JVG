@@ -63,17 +63,10 @@ Partial Class FormDashboard
         ToolStripMenuItem9 = New ToolStripSeparator()
         AcercaDeToolStripMenuItem = New ToolStripMenuItem()
         splitContainer1 = New SplitContainer()
-        lblTituloMaterias = New Label()
-        txtBuscar = New TextBox()
-        clbMaterias = New CheckedListBox()
         btnVerificar = New Button()
-        lblProgreso = New Label()
-        progressBarProgreso = New ProgressBar()
-        lblPorcentaje = New Label()
-        lblAprobadas = New Label()
-        lblRegular = New Label()
-        lblEnCurso = New Label()
-        lblPendientes = New Label()
+        clbMaterias = New CheckedListBox()
+        txtBuscar = New TextBox()
+        lblTituloMaterias = New Label()
         dgvHorarioResumen = New DataGridView()
         colHora = New DataGridViewTextBoxColumn()
         colLunes = New DataGridViewTextBoxColumn()
@@ -82,6 +75,13 @@ Partial Class FormDashboard
         colJueves = New DataGridViewTextBoxColumn()
         colViernes = New DataGridViewTextBoxColumn()
         colSabado = New DataGridViewTextBoxColumn()
+        lblPendientes = New Label()
+        lblEnCurso = New Label()
+        lblRegular = New Label()
+        lblAprobadas = New Label()
+        lblPorcentaje = New Label()
+        progressBarProgreso = New ProgressBar()
+        lblProgreso = New Label()
         panelSuperior.SuspendLayout()
         menuPrincipal.SuspendLayout()
         CType(splitContainer1, ComponentModel.ISupportInitialize).BeginInit()
@@ -366,36 +366,6 @@ Partial Class FormDashboard
         splitContainer1.SplitterDistance = 613
         splitContainer1.TabIndex = 1
         ' 
-        ' lblTituloMaterias
-        ' 
-        lblTituloMaterias.AutoSize = True
-        lblTituloMaterias.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblTituloMaterias.ForeColor = SystemColors.ActiveCaptionText
-        lblTituloMaterias.Location = New Point(20, 20)
-        lblTituloMaterias.Name = "lblTituloMaterias"
-        lblTituloMaterias.Size = New Size(145, 21)
-        lblTituloMaterias.TabIndex = 0
-        lblTituloMaterias.Text = "📋 MIS MATERIAS"
-        ' 
-        ' txtBuscar
-        ' 
-        txtBuscar.ForeColor = Color.Gray
-        txtBuscar.Location = New Point(20, 55)
-        txtBuscar.Name = "txtBuscar"
-        txtBuscar.Size = New Size(400, 23)
-        txtBuscar.TabIndex = 1
-        txtBuscar.Text = "🔍 Buscar materia..."
-        ' 
-        ' clbMaterias
-        ' 
-        clbMaterias.CheckOnClick = True
-        clbMaterias.Font = New Font("Segoe UI", 10.0F)
-        clbMaterias.FormattingEnabled = True
-        clbMaterias.Location = New Point(20, 100)
-        clbMaterias.Name = "clbMaterias"
-        clbMaterias.Size = New Size(400, 304)
-        clbMaterias.TabIndex = 2
-        ' 
         ' btnVerificar
         ' 
         btnVerificar.BackColor = Color.DodgerBlue
@@ -409,75 +379,35 @@ Partial Class FormDashboard
         btnVerificar.Text = "✅ Verificar Correlativas"
         btnVerificar.UseVisualStyleBackColor = False
         ' 
-        ' lblProgreso
+        ' clbMaterias
         ' 
-        lblProgreso.AutoSize = True
-        lblProgreso.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblProgreso.ForeColor = Color.Black
-        lblProgreso.Location = New Point(21, 20)
-        lblProgreso.Name = "lblProgreso"
-        lblProgreso.Size = New Size(143, 21)
-        lblProgreso.TabIndex = 0
-        lblProgreso.Text = "📊 MI PROGRESO"
+        clbMaterias.CheckOnClick = True
+        clbMaterias.Font = New Font("Segoe UI", 10F)
+        clbMaterias.FormattingEnabled = True
+        clbMaterias.Location = New Point(20, 100)
+        clbMaterias.Name = "clbMaterias"
+        clbMaterias.Size = New Size(400, 304)
+        clbMaterias.TabIndex = 2
         ' 
-        ' progressBarProgreso
+        ' txtBuscar
         ' 
-        progressBarProgreso.Location = New Point(21, 60)
-        progressBarProgreso.Name = "progressBarProgreso"
-        progressBarProgreso.Size = New Size(400, 25)
-        progressBarProgreso.TabIndex = 1
+        txtBuscar.ForeColor = Color.Gray
+        txtBuscar.Location = New Point(20, 55)
+        txtBuscar.Name = "txtBuscar"
+        txtBuscar.Size = New Size(400, 23)
+        txtBuscar.TabIndex = 1
+        txtBuscar.Text = "🔍 Buscar materia..."
         ' 
-        ' lblPorcentaje
+        ' lblTituloMaterias
         ' 
-        lblPorcentaje.AutoSize = True
-        lblPorcentaje.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblPorcentaje.ForeColor = Color.Black
-        lblPorcentaje.Location = New Point(180, 90)
-        lblPorcentaje.Name = "lblPorcentaje"
-        lblPorcentaje.Size = New Size(26, 17)
-        lblPorcentaje.TabIndex = 2
-        lblPorcentaje.Text = "0%"
-        ' 
-        ' lblAprobadas
-        ' 
-        lblAprobadas.AutoSize = True
-        lblAprobadas.ForeColor = Color.Black
-        lblAprobadas.Location = New Point(20, 130)
-        lblAprobadas.Name = "lblAprobadas"
-        lblAprobadas.Size = New Size(91, 15)
-        lblAprobadas.TabIndex = 3
-        lblAprobadas.Text = "✅ Aprobadas: 0"
-        ' 
-        ' lblRegular
-        ' 
-        lblRegular.AutoSize = True
-        lblRegular.BackColor = Color.White
-        lblRegular.ForeColor = Color.Black
-        lblRegular.Location = New Point(20, 160)
-        lblRegular.Name = "lblRegular"
-        lblRegular.Size = New Size(106, 15)
-        lblRegular.TabIndex = 4
-        lblRegular.Text = ChrW(55357) & ChrW(57313) & " Regularizadas: 0"
-        ' 
-        ' lblEnCurso
-        ' 
-        lblEnCurso.AutoSize = True
-        lblEnCurso.ForeColor = Color.Black
-        lblEnCurso.Location = New Point(20, 190)
-        lblEnCurso.Name = "lblEnCurso"
-        lblEnCurso.Size = New Size(79, 15)
-        lblEnCurso.TabIndex = 5
-        lblEnCurso.Text = "🔵 En curso: 0"
-        ' 
-        ' lblPendientes
-        ' 
-        lblPendientes.AutoSize = True
-        lblPendientes.ForeColor = Color.Black
-        lblPendientes.Location = New Point(20, 220)
-        lblPendientes.Name = "lblPendientes"
-        lblPendientes.Size = New Size(90, 15)
-        lblPendientes.TabIndex = 6
-        lblPendientes.Text = "⬜ Pendientes: 0"
+        lblTituloMaterias.AutoSize = True
+        lblTituloMaterias.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTituloMaterias.ForeColor = SystemColors.ActiveCaptionText
+        lblTituloMaterias.Location = New Point(20, 20)
+        lblTituloMaterias.Name = "lblTituloMaterias"
+        lblTituloMaterias.Size = New Size(145, 21)
+        lblTituloMaterias.TabIndex = 0
+        lblTituloMaterias.Text = "📋 MIS MATERIAS"
         ' 
         ' dgvHorarioResumen
         ' 
@@ -541,9 +471,79 @@ Partial Class FormDashboard
         colSabado.ReadOnly = True
         colSabado.Width = 50
         ' 
+        ' lblPendientes
+        ' 
+        lblPendientes.AutoSize = True
+        lblPendientes.ForeColor = Color.Black
+        lblPendientes.Location = New Point(20, 220)
+        lblPendientes.Name = "lblPendientes"
+        lblPendientes.Size = New Size(90, 15)
+        lblPendientes.TabIndex = 6
+        lblPendientes.Text = "⬜ Pendientes: 0"
+        ' 
+        ' lblEnCurso
+        ' 
+        lblEnCurso.AutoSize = True
+        lblEnCurso.ForeColor = Color.Black
+        lblEnCurso.Location = New Point(20, 190)
+        lblEnCurso.Name = "lblEnCurso"
+        lblEnCurso.Size = New Size(79, 15)
+        lblEnCurso.TabIndex = 5
+        lblEnCurso.Text = "🔵 En curso: 0"
+        ' 
+        ' lblRegular
+        ' 
+        lblRegular.AutoSize = True
+        lblRegular.BackColor = Color.White
+        lblRegular.ForeColor = Color.Black
+        lblRegular.Location = New Point(20, 160)
+        lblRegular.Name = "lblRegular"
+        lblRegular.Size = New Size(106, 15)
+        lblRegular.TabIndex = 4
+        lblRegular.Text = ChrW(55357) & ChrW(57313) & " Regularizadas: 0"
+        ' 
+        ' lblAprobadas
+        ' 
+        lblAprobadas.AutoSize = True
+        lblAprobadas.ForeColor = Color.Black
+        lblAprobadas.Location = New Point(20, 130)
+        lblAprobadas.Name = "lblAprobadas"
+        lblAprobadas.Size = New Size(91, 15)
+        lblAprobadas.TabIndex = 3
+        lblAprobadas.Text = "✅ Aprobadas: 0"
+        ' 
+        ' lblPorcentaje
+        ' 
+        lblPorcentaje.AutoSize = True
+        lblPorcentaje.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblPorcentaje.ForeColor = Color.Black
+        lblPorcentaje.Location = New Point(180, 90)
+        lblPorcentaje.Name = "lblPorcentaje"
+        lblPorcentaje.Size = New Size(26, 17)
+        lblPorcentaje.TabIndex = 2
+        lblPorcentaje.Text = "0%"
+        ' 
+        ' progressBarProgreso
+        ' 
+        progressBarProgreso.Location = New Point(21, 60)
+        progressBarProgreso.Name = "progressBarProgreso"
+        progressBarProgreso.Size = New Size(400, 25)
+        progressBarProgreso.TabIndex = 1
+        ' 
+        ' lblProgreso
+        ' 
+        lblProgreso.AutoSize = True
+        lblProgreso.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblProgreso.ForeColor = Color.Black
+        lblProgreso.Location = New Point(21, 20)
+        lblProgreso.Name = "lblProgreso"
+        lblProgreso.Size = New Size(143, 21)
+        lblProgreso.TabIndex = 0
+        lblProgreso.Text = "📊 MI PROGRESO"
+        ' 
         ' FormDashboard
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(1084, 861)

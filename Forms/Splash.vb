@@ -15,7 +15,6 @@
 
     Private Sub Timer_Tick(sender As Object, e As EventArgs)
         progress += 2
-
         progressBar.Value = Math.Min(progress, 100)
         lblProgress.Text = progress & "%"
 
@@ -24,8 +23,12 @@
             timer.Dispose()
 
             Dim login As New FormLogin()
-            login.Show()
             Me.Hide()
+            login.Show()
         End If
     End Sub
+
+
+
+
 End Class

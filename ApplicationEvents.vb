@@ -1,11 +1,7 @@
-﻿Imports AOE_JVG.Forms
+﻿Namespace My
 
-Module Program
-    Public UsuarioActual As Usuario
+    Partial Friend Class MyApplication
 
-    Sub Main()
-        Application.EnableVisualStyles()
-        Application.SetCompatibleTextRenderingDefault(False)
-        Application.Run(New Splash())
-    End Sub
-End Module
+    End Class
+
+End Namespace
